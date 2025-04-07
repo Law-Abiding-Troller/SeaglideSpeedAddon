@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
+using LawAbidingTroller.LiteralSeaglideUpgrades.Seaglide_Modules.Efficiency_Modules;
 using LawAbidingTroller.SeaglideModConcept;
 using LawAbidingTroller.SeaglideModConcept.SeaglideModules.SpeedPrefab;
 using LiteralSeaglideUpgrades;
@@ -18,6 +19,12 @@ namespace SeaglideSpeedAddon
         [HarmonyPostfix]
         public static void Update_Postfix(LawAbidingTroller.SeaglideModConcept.Plugin __instance)
         {
+            if (__instance.)//unfinished
+            { 
+                var newallowedtech = new TechType[] { TechType.SeaTreaderPoop, LawAbidingTroller.SeaglideModConcept.SeaglideModules.SpeedPrefab.SeaglideSpeedModulePrefab.Info.TechType, SeaglideSpeedModuleMk2.Info.TechType, SeaglideSpeedModuleMk3.Info.TechType, SeaglideEfficiencyModuleMk1.Info.TechType, };
+            }
+            __instance.allo//also unfinished, im attempting to set the allowed tech for the storage container
+
             if (__instance.seaglidestorage[0].container.Contains(Plugin.prefabinfo[0].TechType))
             {
                 __instance.currentspeed = 5;
@@ -69,20 +76,48 @@ namespace SeaglideSpeedAddon
                     __instance.ResetSeaglideSpeed();
                     Player.main.UpdateMotorMode();
                     break;
-                case 2:
-                    __instance.IncreaseSeaglideSpeed(SeaglideSpeedModulePrefab.mk1speedmultiplier);
+                case 5:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[0]);
                     Player.main.UpdateMotorMode();
                     break;
-                case 3:
-                    __instance.IncreaseSeaglideSpeed(SeaglideSpeedModuleMk2.mk2speedmultiplier);
+                case 6:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[1]);
                     Player.main.UpdateMotorMode();
                     break;
-                case 4:
-                    __instance.IncreaseSeaglideSpeed(SeaglideSpeedModuleMk3.mk3speedmultiplier);
+                case 7:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[2]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 8:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[3]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 9:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[4]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 10:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[5]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 11:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[6]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 12:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[7]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 13:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[8]);
+                    Player.main.UpdateMotorMode();
+                    break;
+                case 14:
+                    __instance.IncreaseSeaglideSpeed(Plugin.speedmultiplier[9]);
                     Player.main.UpdateMotorMode();
                     break;
                 default:
-                    Logger.LogWarning("Unknown Speed Selection. Defaulting to normal");
+                    LawAbidingTroller.SeaglideModConcept.Plugin.Logger.LogWarning("Unknown Speed Selection. Defaulting to normal");
                     __instance.ResetSeaglideSpeed();
                     Player.main.UpdateMotorMode();
                     break;
